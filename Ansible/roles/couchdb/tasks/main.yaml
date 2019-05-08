@@ -1,0 +1,22 @@
+---
+- name: Pull docker image
+  docker_image:
+    name: couchdb:2.3.0
+
+- name: Create and start a docker container
+  docker_container:
+    name: couchdb
+    image: couchdb:2.3.0
+    state: present
+    networks:
+      - name: TestingNet
+        ipv4_address: ansible_default_ipv4.address
+
+- name: Start a docker container
+  docker_container:
+    name: couchdb
+    image: couchdb:2.3.0
+    state: started
+    ports:
+      - "5984:5984"
+    
