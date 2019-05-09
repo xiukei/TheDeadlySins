@@ -5,6 +5,8 @@ from tweepy.streaming import StreamListener
 from tweepy import Stream
 from tweepy import OAuthHandler
 
+# import requests
+
 #analysis tasks (must be in same directory):
 from geotask import geo_analyser
 from sentimenttask import anger_analyser
@@ -27,6 +29,14 @@ class listener(StreamListener):
 
             geo_analyser(data_dic)
             anger_analyser(data_dic)
+
+            # url = 'http://localhost:5000/geoTask'
+            # header = {'content-type': 'application/json'}
+            # r_geo = requests.post(url, data=json.dumps(data_dic), headers=header)
+            # after_geo = r_geo.json()
+            #
+            # r_anger = requests.post(url, data=json.dumps(after_geo), headers=header)
+            # after_anger = r_anger.json()
 
             data_json = json.dumps(data_dic)
             print(data_json)
