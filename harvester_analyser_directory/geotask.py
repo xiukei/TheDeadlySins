@@ -3,7 +3,7 @@ import shapefile
 
 
 #------------SA4 list------------
-sf = shapefile.Reader("/Users/shijunyi/Desktop/COMP90024 Cluster and Cloud Computing/Assignment/A2/SA4_2016_AUST/SA4_2016_AUST")
+sf = shapefile.Reader("SA4_2016_AUST_folder/SA4_2016_AUST") #(SA4_2016_AUST folder must be in same directory)
 records = sf.records() #info of areas
 shapes = sf.shapes() #shape of areas
 
