@@ -4,8 +4,7 @@ import time
 from tweepy.streaming import StreamListener
 from tweepy import Stream
 from tweepy import OAuthHandler
-
-# import requests
+import couchdb
 
 #analysis tasks (must be in same directory):
 from geotask import geo_analyser
@@ -18,8 +17,13 @@ CONSUMER_KEY = 'zv08YzZHWuZI7WfRlZu4BtAXM'
 CONSUMER_SECRET = 'WGCjDSpeehkcgCgQfzR2JqLQ6ooB2n7TBlZeck7wISF6sO2AMR'
 
 GEOBOX_MELB = [144.7, -37.65, 144.85, -37.5]
-
 GEOBOX_AUSTRALIA = [112.35, -43.56, 154.41, -10.16]
+
+couch = couchdb.Server("http://%s:%s@172.26.38.133:5984/" % ('admin', 'admin'))
+if 'tagged_twit' in couch:
+    db = couch['tagged_twit']
+else:
+    db = couch.create('tagged_twit')
 
 class listener(StreamListener):
 
@@ -30,18 +34,11 @@ class listener(StreamListener):
             geo_analyser(data_dic)
             anger_analyser(data_dic)
 
-            # url = 'http://localhost:5000/geoTask'
-            # header = {'content-type': 'application/json'}
-            # r_geo = requests.post(url, data=json.dumps(data_dic), headers=header)
-            # after_geo = r_geo.json()
-            #
-            # r_anger = requests.post(url, data=json.dumps(after_geo), headers=header)
-            # after_anger = r_anger.json()
+            doc_id = data_dic["id_str"]
+            doc = {"_id": doc_id, "tweet_data": data_dic}
+            db.save(doc)
+            print("saved: " + doc_id)
 
-            data_json = json.dumps(data_dic)
-            print(data_json)
-            with open('twitter_data.json', 'a') as twitter_file:
-                twitter_file.write(data_json+'\n')
             return True
         except BaseException as e:
             print(e)
