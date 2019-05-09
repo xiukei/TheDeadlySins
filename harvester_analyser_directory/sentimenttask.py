@@ -6,7 +6,10 @@ KEY_LIST = ['8b233bbd79e30e64e3a0a62041889ccc',
             '4cb029ab44f24303e345498e3c66359c',
             'bd0a57f162ad6119efc22947948107f5',
             '86547684249ef030c7d6875d3f8faf15',
-            'a0138a8c8aca1090f285c174da538006']
+            'a0138a8c8aca1090f285c174da538006',
+            '66489f0761a26dce2089d6727aae9a57',
+            'd4be1704d9d9fc81b4e8ac4a1a85af33',
+            '7c1cf69751f3bc75b67e8550553db017']
 
 
 def anger_analyser(data_dic):
