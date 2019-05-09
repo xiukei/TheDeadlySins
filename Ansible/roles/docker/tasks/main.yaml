@@ -6,12 +6,19 @@
     name: ['docker', 'docker-engine', docker-io']
     state: absent
 
+- name: apt-get update
+  become: yes
+  apt:
+    update-cache: yes
+
 - name: Install dependencies
   tags: 'docker'
   become: yes
   apt:
     name: ['apt-transport-https', 'ca-certificates', 'curl', 'python-setuptools', 'software-properties-common']
     state: latest
+    install_recommends: no
+    update_cache: yes
 
 - name: Add Docker apt repository key
   tags: 'docker'
@@ -19,17 +26,21 @@
   apt_key:
     url: https://download.docker.com/linux/ubuntu/gpg
     state: present
-    validate_certs: false
 
 - name: Add Docker apt repository and update apt cache
   tags: 'docker'
   become: 'yes'
   apt_repository:
-    repo: "deb https://download.docker.com/linux/{{ ansible_distribution|lower }} {{ ansible_distribution_release }} stable"
+    repo: "deb [arch=amd64] https://download.docker.com/linux/ubuntu {{ ansible_distribution_release|lower }} stable"
     mode: '644'
     update_cache: yes
     state: present
     validate_certs: false
+
+- name: apt-get update
+  become: yes
+  apt:
+    update-cache: yes
 
 - name: Install docker
   tags: 'docker'
@@ -68,26 +79,31 @@
   tags: 'docker'
   become: yes
   copy:
-    dest: "/etc/systemd/system/docker/service.d/http-proxy.conf"
+    dest: "/etc/systemd/system/docker.service.d/http-proxy.conf"
     content: |
         [Service]
-        Environment="HTTP_PROXY=http://wwwproxy.unimelb.edu.au:8000" "HTTPS_PROXY=https://wwwproxy.unimelb.edu.au:8000" "FTP_PROXY=http://wwwproxy.unimelb.edu.au:8000"
+        Environment="HTTP_PROXY=http://wwwproxy.unimelb.edu.au:8000"
+
+- name: Create a file and adds the HTTP_PROXY environment variable
+  tags: 'docker'
+  become: yes
+  copy:
+    dest: "/etc/systemd/system/docker.service.d/https-proxy.conf"
+    content: |
+        [Service]
+        Environment="HTTPS_PROXY=http://wwwproxy.unimelb.edu.au:8000"
 
 - name: Flush changes
   tags: 'docker'
   become: yes
-  command: systemct1 daemon-reload
+  command: systemctl daemon-reload
 
 - name: Restart docker
   tags: 'docker'
   become: yes
-  command: systemct1 restart docker
+  command: systemctl restart docker
 
 - name: Verify thar the configuration has been loaded
   tags: 'docker'
   become: yes
-  command: systemct1 show --property=Environment docker
-  register: verify
-
-- debug:
-    mes: "Verification results: {{ verify }}"
+  command: systemctl show --property=Environment docker

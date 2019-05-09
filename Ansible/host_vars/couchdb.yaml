@@ -1,10 +1,7 @@
 ---
 volumes:
   - device: /dev/vdb
-    mountpoint: /var/lib/docker
-
-# nodes:
-#   - ip: 
+    mountpoint: /couchdb
 
 couchdb_username: group41
-couchdb_password: G41h1-0-
+couchdb_password: 1029384756
