@@ -1,0 +1,35 @@
+---
+- name: Gather facts of remote host
+  setup:
+    gather_subset: all
+
+- name: Write proxy into /etc/environment
+  tags: always
+  become: yes
+  blockinfile:
+    path: /etc/environment
+    block: |
+        http_proxy="http://wwwproxy.unimelb.edu.au:8000"
+        https_proxy="http://wwwproxy.unimelb.edu.au:8000"
+        ftp_proxy="http://wwwwproxy.unimelb.edu.au:8000"
+
+- name: Install dependencies
+  tags: always
+  become: yes
+  apt:
+    name: ['git', 'python-pip', 'python', 'python-setuptools']
+    state: latest
+
+- name: Install openstacksdk
+  tags: always
+  become: yes
+  pip:
+    name: ['openstacksdk']
+    state: latest
+
+- name: Update pip
+  tags: always
+  become: yes
+  pip:
+    name: ['pip']
+    state: latest

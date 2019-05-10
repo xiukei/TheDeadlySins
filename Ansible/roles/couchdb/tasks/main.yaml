@@ -1,0 +1,125 @@
+---
+- name: Create security group rules for port 5984
+  os_security_group_rule:
+    security_group: 'group41_http'
+    protocol: 'tcp'
+    port_range_min: 5984
+    port_range_max: 5984
+    remote_ip_prefix: 0.0.0.0
+    state: present
+
+- name: Create security group rules for port 5986
+  os_security_group_rule:
+    security_group: 'group41_http'
+    protocol: 'tcp'
+    port_range_min: 5986
+    port_range_max: 5986
+    remote_ip_prefix: 0.0.0.0
+    state: present
+
+- name: Pull docker image
+  become: yes
+  tags: 'couchdb'
+  command: docker pull couchdb:2.3.0
+
+- name: Create docker container
+  tags: 'couchdb'
+  become: yes
+  command: docker run -d --name couchdb --network host -p 5984:5984 -v /couchdb:/opt/couchdb/data -e "COUCHDB_USER=group41" -e "COUCHDB_PASSWORD=1029384756" couchdb:2.3.0
+
+- name: Modifies vm.args set cookie
+  tags: 'couchdb'
+  become: yes
+  command: docker exec couchdb bash -c "echo \"-setcookie cluster\" >> /opt/couchdb/etc/vm.args"
+
+- name: Modifies vm.args set name
+  tags: 'couchdb'
+  become: yes
+  command: docker exec couchdb bash -c "echo \"-name couchdb@{{ ansible_default_ipv4.address }}\" >> /opt/couchdb/etc/vm.args"
+
+- name: docker restart couchdb
+  tags: 'couchdb'
+  become: yes
+  command: docker restart couchdb
+
+- name: sleep 3
+  tags: 'couchdb'
+  command: sleep 3
+
+- name: Each node sets bind_address
+  tags: 'couchdb'
+  command: curl -X PUT http://{{ couchdb_username }}:{{ couchdb_password }}@{{ ansible_default_ipv4.address }}:5984/_node/_local/_config/chttpd/bind_address -d '"0.0.0.0"'
+  args:
+    warn: no
+
+- name: Get uuid
+  tags: 'couchdb'
+  uri:
+    url: http://{{ couchdb_username }}:{{ couchdb_password }}@{{ ansible_default_ipv4.address }}:5984/_uuids?count=2
+  when: ansible_default_ipv4.address == groups['dbserver'][0]
+  register: result
+
+- name: set the uuids as fact
+  set_fact: 
+    uuids1: "{{ result.json.uuids[0] }}"
+    uuids2: "{{ result.json.uuids[1] }}"
+  when: ansible_default_ipv4.address == groups['dbserver'][0]
+
+- debug:
+    msg: "{{ hostvars[groups['dbserver'][0]]['uuids1'] }} {{ hostvars[groups['dbserver'][0]]['uuids2'] }}"
+
+- name: Configure uuid
+  tags: 'couchdb'
+  command: curl -X PUT http://{{ couchdb_username }}:{{ couchdb_password }}@{{ ansible_default_ipv4.address }}:5984/_node/_local/_config/couchdb/uuid -d '"{{ hostvars[groups['dbserver'][0]]['uuids1'] }}"'
+  args:
+    warn: no
+
+- name: Configure httpd_auth secret
+  tags: 'couchdb'
+  command: curl -X PUT http://{{ couchdb_username }}:{{ couchdb_password }}@{{ ansible_default_ipv4.address }}:5984/_node/_local/_config/couch_httpd_auth/secret -d '"{{ hostvars[groups['dbserver'][0]]['uuids2'] }}"'
+  args:
+    warn: no
+
+- name: Each node enable cluster
+  tags: 'couchdb'
+  command: "curl -X POST -H \"Content-Type: application/json\" http://{{ couchdb_username }}:{{ couchdb_password }}@{{ ansible_default_ipv4.address }}:5984/_cluster_setup -d '{\"action\": \"enable_cluster\", \"bind_address\": \"0.0.0.0\", \"username\": \"{{ couchdb_username }}\", \"password\": \"{{ couchdb_password }}\", \"node_count\": \"3\"'"
+  args:
+    warn: no
+
+- name: enable node to the cluster mode
+  tags: 'couchdb'
+  command: "curl -X POST -H \"Content-Type: application/json\" http://{{ couchdb_username }}:{{ couchdb_password }}@{{ ansible_default_ipv4.address }}:5984/_cluster_setup -d '{\"action\": \"enable_cluster\", \"bind_address\":\"0.0.0.0\", \"username\": \"{{ couchdb_username }}\", \"password\": \"{{ couchdb_password }} \", \"port\": 5984, \"node_count\": \"3\", \"remote_node\": \"{{ item }}\", \"remote_current_user\": \"{{ couchdb_username }}\", \"remote_current_password\": \"{{ couchdb_password }}\" }'"
+  args:
+    warn: no
+  when: ansible_default_ipv4.address == groups['dbserver'][0]
+  with_items:
+    - groups['dbserver'][1]
+    - groups['dbserver'][2]
+
+- name: join node to cluster
+  tags: 'couchdb'
+  command: "curl -X POST -H \"Content-Type: application/json\" http://{{ couchdb_username }}:{{ couchdb_password }}@{{ groups['dbserver'][0] }}:5984/_cluster_setup -d '{\"action\": \"add_node\", \"host\": \"{{ item }}\", \"port\": 5984, \"username\": \"{{ couchdb_username}}\", \"password\": \"couchdb_password\"}'"
+  args:
+    warn: no
+  when: ansible_default_ipv4.address == groups['dbserver'][0]
+  with_items:
+    - groups['dbserver'][1]
+    - groups['dbserver'][2]
+
+- name: let coordination node finnish cluster
+  tags: 'couchdb'
+  command: "curl -X POST -H \"Content-Type: application/json\" http://{{ couchdb_username }}:{{ couchdb_password }}@{{ groups['dbserver'][0] }}:5984/_cluster_setup -d '{\"action\": \"finish_cluster\"}'"
+  args:
+    warn: no
+  when: ansible_default_ipv4.address == groups['dbserver'][0]
+
+# go to the group41-4 to do this command
+# - name: Coordination node remove nonode@nohost
+#   tags: 'couchdb'
+#   command: "{{ item }}"
+#   args:
+#     warn: no
+#   when: ansible_default_ipv4.address == groups['dbserver'][0]
+#   with_items:
+#     - rev=`curl -XGET "http://{{ ansible_default_ipv4.address }}:5986/_nodes/nonode@nohost" --user "{{ couchdb_username }}:{{ couchdb_password }}" | sed -e 's/[{}"]//g' | cut -f3 -d:`
+#     - curl -X DELETE "http://{{ ansible_default_ipv4.address }}:5986/_nodes/nonode@nohost?rev=${rev}"  --user "{{ couchdb_username }}:{{ couchdb_password }}"
