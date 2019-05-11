@@ -20,7 +20,7 @@ GEOBOX_MELB = [144.7, -37.65, 144.85, -37.5]
 GEOBOX_AUSTRALIA = [112.35, -43.56, 154.41, -10.16]
 
 # 172.26.38.133:5984
-couch = couchdb.Server("http://%s:%s@172.26.38.89:5984/" % ('group41', '1029384756'))
+couch = couchdb.Server("http://%s:%s@172.26.38.36:5984/" % ('group41', '1029384756'))
 if 'tagged_twit' in couch:
     db = couch['tagged_twit']
 else:
