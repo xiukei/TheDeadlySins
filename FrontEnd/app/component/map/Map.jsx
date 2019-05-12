@@ -38,6 +38,9 @@ const styles = {
         width: '10px',
         background: 'linear-gradient(#ffffff, #ff142c)',
         display:'inline-block'
+    },
+    word:{
+        fontSize: '16px'
     }
 };
 
@@ -184,17 +187,17 @@ class Map extends React.PureComponent {
         
         let ilat = e.latLng.lat();
         let ilng = e.latLng.lng();
+        const { classes } = this.props;
         let info = (
         <div>
-            SA4 Code: {state.code}<br/>
-            SA4 Name: {state.name}<br/>
-            Total Twitter Post: {state.count}<br />
-            Total Anger Twitter Post: {state.sum}<br />
-            Total Income: {sum} <br />
-            Weekly Income Information: <br/>
+            <p className={classes.word}>SA4 Code: {state.code}</p>
+            <p className={classes.word}>SA4 Name: {state.name}</p>
+            <p className={classes.word}>Anger proportion : {((state.sum / state.count)*100).toFixed(2) + "%"}</p>
+            <p className={classes.word}>Total Income: {sum}</p>
             <Labelline 
                 data = {data}
             />
+            <p className={classes.word} style={{textAlign:'center'}}>Pie Chart : Distribution of Weekly Income</p>
         </div>);
         this.setState({
             show: true,
