@@ -26,7 +26,7 @@ class Chart extends React.PureComponent {
     }
 
     componentDidMount() {
-        let viewURL = "http://172.26.38.89:5984/tagged_twit/_design/angerviewdoc/_view/anger-view?group=true";
+        let viewURL = "http://172.26.38.36:5984/tagged_twit/_design/angerviewdoc/_view/anger-view?group=true";
         fetch(viewURL).then(res => {
             res.json().then((dataJson) => {
                 this.setState({

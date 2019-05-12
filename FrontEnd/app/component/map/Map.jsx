@@ -43,8 +43,8 @@ const styles = {
 
 const MyMapComponent = compose(
     withProps({
-        // googleMapURL: "https://maps.googleapis.com/maps/api/js?key=AIzaSyBzePKpJhMUNanb890R2sYaUF6zDWJGUcI&v=3.exp&libraries=geometry,drawing,places",
-        googleMapURL: "https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places",
+        googleMapURL: "https://maps.googleapis.com/maps/api/js?key=AIzaSyBzePKpJhMUNanb890R2sYaUF6zDWJGUcI&v=3.exp&libraries=geometry,drawing,places",
+        // googleMapURL: "https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places",
         loadingElement: <div style={{ height: `100%` }} />,
         containerElement: <div style={{ height: `800px` }} />,
         mapElement: <div style={{ height: `100%` }} />,
@@ -135,7 +135,7 @@ class Map extends React.PureComponent {
     }
 
     componentDidMount() {
-        let viewURL ="http://172.26.38.89:5984/tagged_twit/_design/angerviewdoc/_view/anger-view?group=true";
+        let viewURL ="http://172.26.38.36:5984/tagged_twit/_design/angerviewdoc/_view/anger-view?group=true";
         fetch(viewURL).then(res => {
             res.json().then((dataJson) => {
                 this.setState({
@@ -299,12 +299,12 @@ class Map extends React.PureComponent {
                                         <div className={classes.gradient}>
                                         </div>
                                         </td>
-                                        <td valign="top">AVG: {min}</td>
+                                        <td valign="top">{min * 100 + "%"}</td>
                                     </tr>
                                     <tr><td></td></tr>
                                     <tr><td></td></tr>
                                     <tr>
-                                        <td valign="bottom">AVG: {max.toFixed(4)}</td>
+                                        <td valign="bottom">{(max * 100).toFixed(2) + "%"}</td>
                                     </tr>
                                 </table>
                             </div>
