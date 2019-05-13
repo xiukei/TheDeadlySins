@@ -48,7 +48,7 @@ class Curved extends React.Component {
                 type: "linear",
                 nice: true,
                 min : 0,
-                max : 0.6,
+                max : 0.4,
             }
         };
         return (
