@@ -22,7 +22,7 @@ GEOBOX_AUSTRALIA = [112.35, -43.56, 154.41, -10.16]
 
 
 # read host from Ansible/hosts
-path = os.path.abspath(os.path.join(os.getcwd(), "..")) + '/Ansible/hosts'
+path = os.path.abspath(os.path.join(os.getcwd(), "..")) + '/ansible/hosts'
 host = ""
 flag = False
 with open(path, 'r') as hostfile:
