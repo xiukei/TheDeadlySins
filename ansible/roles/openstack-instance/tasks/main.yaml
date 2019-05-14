@@ -1,0 +1,41 @@
+---
+# Create an instance on NeCTAR
+- name: Create an instance
+  os_server:
+    name: '{{ item.instance_name }}'
+    image: '{{ item.instance_image }}'
+    key_name: '{{ item.instance_key_name }}'
+    flavor: '{{ item.instance_flavor }}'
+    availability_zone: '{{ availability_zone }}'
+    security_groups: '{{ sg_names }}'
+    volumes: '{{ item.instance_volume }}'
+    auto_floating_ip: yes
+    wait: yes
+    timeout: 600
+    state: present
+  loop: '{{ instances }}'
+  register: os_instance
+
+# Create a list of instance names
+- name: Create a list of instance names
+  set_fact:
+    i_names: '{{ i_names|default([]) + [ item.instance_name ] }}'
+  loop: '{{ instances }}'
+
+# Create a list of instance ip addresses
+- name: Create a list of instance ip addresses
+  set_fact:
+    ip_addresses: '{{ ip_addresses|default([]) + [ item.openstack.public_v4 ] }}'
+  loop: '{{ os_instance.results }}'
+
+# Add ip address to the hosts file
+- name: Add ip address to the hosts file
+  lineinfile:
+    path: hosts
+    regexp: '^\$.*$'
+    line: "{{ item.openstack.public_v4 }}"
+    state: present
+  loop: '{{ os_instance.results }}'
+
+- debug:
+    msg: "Instance {{ i_names }} have been created. IP address are {{ ip_addresses }}"

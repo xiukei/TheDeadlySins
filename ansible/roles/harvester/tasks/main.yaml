@@ -1,0 +1,32 @@
+---
+- name: Install dependencies
+  tags: 'harvester'
+  become: yes
+  apt:
+    name: ['python', 'python3', 'python-pip', 'python3-pip', 'python3-setuptools']
+    state: latest
+    install_recommends: no
+    update_cache: yes
+
+- name: Import python libraries
+  tags: 'harvester'
+  become: yes
+  pip:
+    name: ['tweepy', 'couchdb', 'shapely', 'pyshp', 'indicoio']
+    state: latest
+    executable: pip3  
+
+- name: Git clone repository
+  tags: 'harvester'
+  git:
+    repo: https://{{ githubuser | urlencode }}:{{ githubpassword | urlencode }}@github.com/xiukei/TheDeadlySins.git
+    dest: /home/ubuntu/TheDeadlySins
+
+- name: Run harvester
+  tags: 'harvester'
+  command: nohup python3 harvester.py > output.log 2>&1 &
+  async: 10
+  poll: 0
+  args:
+    chdir: /home/ubuntu/TheDeadlySins/harvester_analyser_directory
+    

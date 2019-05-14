@@ -1,0 +1,7 @@
+---
+volumes:
+  - device: /dev/vdb
+    mountpoint: /couchdb
+
+couchdb_username: group41
+couchdb_password: 1029384756
