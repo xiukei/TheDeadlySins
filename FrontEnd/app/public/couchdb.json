@@ -1,0 +1,894 @@
+{
+    "rows": [
+        {
+            "key": "101",
+            "value": {
+                "sum": 19,
+                "count": 208,
+                "min": 0,
+                "max": 1,
+                "sumsqr": 19
+            }
+        },
+        {
+            "key": "102",
+            "value": {
+                "sum": 0,
+                "count": 28,
+                "min": 0,
+                "max": 0,
+                "sumsqr": 0
+            }
+        },
+        {
+            "key": "103",
+            "value": {
+                "sum": 131,
+                "count": 1166,
+                "min": 0,
+                "max": 1,
+                "sumsqr": 131
+            }
+        },
+        {
+            "key": "104",
+            "value": {
+                "sum": 13,
+                "count": 125,
+                "min": 0,
+                "max": 1,
+                "sumsqr": 13
+            }
+        },
+        {
+            "key": "105",
+            "value": {
+                "sum": 71,
+                "count": 464,
+                "min": 0,
+                "max": 1,
+                "sumsqr": 71
+            }
+        },
+        {
+            "key": "106",
+            "value": {
+                "sum": 50,
+                "count": 344,
+                "min": 0,
+                "max": 1,
+                "sumsqr": 50
+            }
+        },
+        {
+            "key": "107",
+            "value": {
+                "sum": 73,
+                "count": 707,
+                "min": 0,
+                "max": 1,
+                "sumsqr": 73
+            }
+        },
+        {
+            "key": "108",
+            "value": {
+                "sum": 33,
+                "count": 296,
+                "min": 0,
+                "max": 1,
+                "sumsqr": 33
+            }
+        },
+        {
+            "key": "109",
+            "value": {
+                "sum": 10,
+                "count": 188,
+                "min": 0,
+                "max": 1,
+                "sumsqr": 10
+            }
+        },
+        {
+            "key": "110",
+            "value": {
+                "sum": 6,
+                "count": 121,
+                "min": 0,
+                "max": 1,
+                "sumsqr": 6
+            }
+        },
+        {
+            "key": "111",
+            "value": {
+                "sum": 93,
+                "count": 894,
+                "min": 0,
+                "max": 1,
+                "sumsqr": 93
+            }
+        },
+        {
+            "key": "112",
+            "value": {
+                "sum": 8,
+                "count": 89,
+                "min": 0,
+                "max": 1,
+                "sumsqr": 8
+            }
+        },
+        {
+            "key": "113",
+            "value": {
+                "sum": 5,
+                "count": 141,
+                "min": 0,
+                "max": 1,
+                "sumsqr": 5
+            }
+        },
+        {
+            "key": "114",
+            "value": {
+                "sum": 46,
+                "count": 377,
+                "min": 0,
+                "max": 1,
+                "sumsqr": 46
+            }
+        },
+        {
+            "key": "115",
+            "value": {
+                "sum": 1,
+                "count": 72,
+                "min": 0,
+                "max": 1,
+                "sumsqr": 1
+            }
+        },
+        {
+            "key": "116",
+            "value": {
+                "sum": 1,
+                "count": 30,
+                "min": 0,
+                "max": 1,
+                "sumsqr": 1
+            }
+        },
+        {
+            "key": "117",
+            "value": {
+                "sum": 6,
+                "count": 309,
+                "min": 0,
+                "max": 1,
+                "sumsqr": 6
+            }
+        },
+        {
+            "key": "118",
+            "value": {
+                "sum": 1,
+                "count": 165,
+                "min": 0,
+                "max": 1,
+                "sumsqr": 1
+            }
+        },
+        {
+            "key": "119",
+            "value": {
+                "sum": 0,
+                "count": 68,
+                "min": 0,
+                "max": 0,
+                "sumsqr": 0
+            }
+        },
+        {
+            "key": "120",
+            "value": {
+                "sum": 1,
+                "count": 62,
+                "min": 0,
+                "max": 1,
+                "sumsqr": 1
+            }
+        },
+        {
+            "key": "121",
+            "value": {
+                "sum": 12,
+                "count": 199,
+                "min": 0,
+                "max": 1,
+                "sumsqr": 12
+            }
+        },
+        {
+            "key": "122",
+            "value": {
+                "sum": 1,
+                "count": 78,
+                "min": 0,
+                "max": 1,
+                "sumsqr": 1
+            }
+        },
+        {
+            "key": "123",
+            "value": {
+                "sum": 20,
+                "count": 98,
+                "min": 0,
+                "max": 1,
+                "sumsqr": 20
+            }
+        },
+        {
+            "key": "124",
+            "value": {
+                "sum": 9,
+                "count": 127,
+                "min": 0,
+                "max": 1,
+                "sumsqr": 9
+            }
+        },
+        {
+            "key": "125",
+            "value": {
+                "sum": 3,
+                "count": 73,
+                "min": 0,
+                "max": 1,
+                "sumsqr": 3
+            }
+        },
+        {
+            "key": "126",
+            "value": {
+                "sum": 0,
+                "count": 43,
+                "min": 0,
+                "max": 0,
+                "sumsqr": 0
+            }
+        },
+        {
+            "key": "127",
+            "value": {
+                "sum": 1651,
+                "count": 15854,
+                "min": 0,
+                "max": 1,
+                "sumsqr": 1651
+            }
+        },
+        {
+            "key": "128",
+            "value": {
+                "sum": 1,
+                "count": 71,
+                "min": 0,
+                "max": 1,
+                "sumsqr": 1
+            }
+        },
+        {
+            "key": "201",
+            "value": {
+                "sum": 21,
+                "count": 237,
+                "min": 0,
+                "max": 1,
+                "sumsqr": 21
+            }
+        },
+        {
+            "key": "202",
+            "value": {
+                "sum": 28,
+                "count": 303,
+                "min": 0,
+                "max": 1,
+                "sumsqr": 28
+            }
+        },
+        {
+            "key": "203",
+            "value": {
+                "sum": 23,
+                "count": 232,
+                "min": 0,
+                "max": 1,
+                "sumsqr": 23
+            }
+        },
+        {
+            "key": "204",
+            "value": {
+                "sum": 125,
+                "count": 1107,
+                "min": 0,
+                "max": 1,
+                "sumsqr": 125
+            }
+        },
+        {
+            "key": "205",
+            "value": {
+                "sum": 40,
+                "count": 233,
+                "min": 0,
+                "max": 1,
+                "sumsqr": 40
+            }
+        },
+        {
+            "key": "206",
+            "value": {
+                "sum": 30,
+                "count": 1125,
+                "min": 0,
+                "max": 1,
+                "sumsqr": 30
+            }
+        },
+        {
+            "key": "207",
+            "value": {
+                "sum": 3,
+                "count": 62,
+                "min": 0,
+                "max": 1,
+                "sumsqr": 3
+            }
+        },
+        {
+            "key": "208",
+            "value": {
+                "sum": 1952,
+                "count": 16555,
+                "min": 0,
+                "max": 1,
+                "sumsqr": 1952
+            }
+        },
+        {
+            "key": "209",
+            "value": {
+                "sum": 3,
+                "count": 79,
+                "min": 0,
+                "max": 1,
+                "sumsqr": 3
+            }
+        },
+        {
+            "key": "210",
+            "value": {
+                "sum": 18,
+                "count": 190,
+                "min": 0,
+                "max": 1,
+                "sumsqr": 18
+            }
+        },
+        {
+            "key": "211",
+            "value": {
+                "sum": 3,
+                "count": 146,
+                "min": 0,
+                "max": 1,
+                "sumsqr": 3
+            }
+        },
+        {
+            "key": "212",
+            "value": {
+                "sum": 19,
+                "count": 217,
+                "min": 0,
+                "max": 1,
+                "sumsqr": 19
+            }
+        },
+        {
+            "key": "213",
+            "value": {
+                "sum": 18,
+                "count": 247,
+                "min": 0,
+                "max": 1,
+                "sumsqr": 18
+            }
+        },
+        {
+            "key": "214",
+            "value": {
+                "sum": 1,
+                "count": 54,
+                "min": 0,
+                "max": 1,
+                "sumsqr": 1
+            }
+        },
+        {
+            "key": "215",
+            "value": {
+                "sum": 20,
+                "count": 170,
+                "min": 0,
+                "max": 1,
+                "sumsqr": 20
+            }
+        },
+        {
+            "key": "216",
+            "value": {
+                "sum": 9,
+                "count": 201,
+                "min": 0,
+                "max": 1,
+                "sumsqr": 9
+            }
+        },
+        {
+            "key": "217",
+            "value": {
+                "sum": 12,
+                "count": 103,
+                "min": 0,
+                "max": 1,
+                "sumsqr": 12
+            }
+        },
+        {
+            "key": "301",
+            "value": {
+                "sum": 0,
+                "count": 30,
+                "min": 0,
+                "max": 0,
+                "sumsqr": 0
+            }
+        },
+        {
+            "key": "302",
+            "value": {
+                "sum": 636,
+                "count": 5668,
+                "min": 0,
+                "max": 1,
+                "sumsqr": 636
+            }
+        },
+        {
+            "key": "303",
+            "value": {
+                "sum": 3,
+                "count": 110,
+                "min": 0,
+                "max": 1,
+                "sumsqr": 3
+            }
+        },
+        {
+            "key": "304",
+            "value": {
+                "sum": 0,
+                "count": 21,
+                "min": 0,
+                "max": 0,
+                "sumsqr": 0
+            }
+        },
+        {
+            "key": "305",
+            "value": {
+                "sum": 9,
+                "count": 374,
+                "min": 0,
+                "max": 1,
+                "sumsqr": 9
+            }
+        },
+        {
+            "key": "306",
+            "value": {
+                "sum": 54,
+                "count": 427,
+                "min": 0,
+                "max": 1,
+                "sumsqr": 54
+            }
+        },
+        {
+            "key": "307",
+            "value": {
+                "sum": 2,
+                "count": 67,
+                "min": 0,
+                "max": 1,
+                "sumsqr": 2
+            }
+        },
+        {
+            "key": "308",
+            "value": {
+                "sum": 9,
+                "count": 136,
+                "min": 0,
+                "max": 1,
+                "sumsqr": 9
+            }
+        },
+        {
+            "key": "309",
+            "value": {
+                "sum": 192,
+                "count": 2189,
+                "min": 0,
+                "max": 1,
+                "sumsqr": 192
+            }
+        },
+        {
+            "key": "310",
+            "value": {
+                "sum": 13,
+                "count": 60,
+                "min": 0,
+                "max": 1,
+                "sumsqr": 13
+            }
+        },
+        {
+            "key": "311",
+            "value": {
+                "sum": 0,
+                "count": 18,
+                "min": 0,
+                "max": 0,
+                "sumsqr": 0
+            }
+        },
+        {
+            "key": "312",
+            "value": {
+                "sum": 10,
+                "count": 116,
+                "min": 0,
+                "max": 1,
+                "sumsqr": 10
+            }
+        },
+        {
+            "key": "313",
+            "value": {
+                "sum": 2,
+                "count": 33,
+                "min": 0,
+                "max": 1,
+                "sumsqr": 2
+            }
+        },
+        {
+            "key": "314",
+            "value": {
+                "sum": 0,
+                "count": 15,
+                "min": 0,
+                "max": 0,
+                "sumsqr": 0
+            }
+        },
+        {
+            "key": "315",
+            "value": {
+                "sum": 0,
+                "count": 30,
+                "min": 0,
+                "max": 0,
+                "sumsqr": 0
+            }
+        },
+        {
+            "key": "316",
+            "value": {
+                "sum": 100,
+                "count": 774,
+                "min": 0,
+                "max": 1,
+                "sumsqr": 100
+            }
+        },
+        {
+            "key": "317",
+            "value": {
+                "sum": 12,
+                "count": 152,
+                "min": 0,
+                "max": 1,
+                "sumsqr": 12
+            }
+        },
+        {
+            "key": "318",
+            "value": {
+                "sum": 61,
+                "count": 831,
+                "min": 0,
+                "max": 1,
+                "sumsqr": 61
+            }
+        },
+        {
+            "key": "319",
+            "value": {
+                "sum": 22,
+                "count": 247,
+                "min": 0,
+                "max": 1,
+                "sumsqr": 22
+            }
+        },
+        {
+            "key": "401",
+            "value": {
+                "sum": 8,
+                "count": 245,
+                "min": 0,
+                "max": 1,
+                "sumsqr": 8
+            }
+        },
+        {
+            "key": "402",
+            "value": {
+                "sum": 2,
+                "count": 52,
+                "min": 0,
+                "max": 1,
+                "sumsqr": 2
+            }
+        },
+        {
+            "key": "403",
+            "value": {
+                "sum": 371,
+                "count": 2884,
+                "min": 0,
+                "max": 1,
+                "sumsqr": 371
+            }
+        },
+        {
+            "key": "404",
+            "value": {
+                "sum": 0,
+                "count": 28,
+                "min": 0,
+                "max": 0,
+                "sumsqr": 0
+            }
+        },
+        {
+            "key": "405",
+            "value": {
+                "sum": 11,
+                "count": 81,
+                "min": 0,
+                "max": 1,
+                "sumsqr": 11
+            }
+        },
+        {
+            "key": "406",
+            "value": {
+                "sum": 49,
+                "count": 663,
+                "min": 0,
+                "max": 1,
+                "sumsqr": 49
+            }
+        },
+        {
+            "key": "407",
+            "value": {
+                "sum": 23,
+                "count": 363,
+                "min": 0,
+                "max": 1,
+                "sumsqr": 23
+            }
+        },
+        {
+            "key": "501",
+            "value": {
+                "sum": 7,
+                "count": 120,
+                "min": 0,
+                "max": 1,
+                "sumsqr": 7
+            }
+        },
+        {
+            "key": "502",
+            "value": {
+                "sum": 0,
+                "count": 9,
+                "min": 0,
+                "max": 0,
+                "sumsqr": 0
+            }
+        },
+        {
+            "key": "503",
+            "value": {
+                "sum": 2,
+                "count": 143,
+                "min": 0,
+                "max": 1,
+                "sumsqr": 2
+            }
+        },
+        {
+            "key": "504",
+            "value": {
+                "sum": 1,
+                "count": 14,
+                "min": 0,
+                "max": 1,
+                "sumsqr": 1
+            }
+        },
+        {
+            "key": "505",
+            "value": {
+                "sum": 1,
+                "count": 26,
+                "min": 0,
+                "max": 1,
+                "sumsqr": 1
+            }
+        },
+        {
+            "key": "506",
+            "value": {
+                "sum": 426,
+                "count": 3949,
+                "min": 0,
+                "max": 1,
+                "sumsqr": 426
+            }
+        },
+        {
+            "key": "507",
+            "value": {
+                "sum": 0,
+                "count": 30,
+                "min": 0,
+                "max": 0,
+                "sumsqr": 0
+            }
+        },
+        {
+            "key": "509",
+            "value": {
+                "sum": 14,
+                "count": 210,
+                "min": 0,
+                "max": 1,
+                "sumsqr": 14
+            }
+        },
+        {
+            "key": "510",
+            "value": {
+                "sum": 3,
+                "count": 58,
+                "min": 0,
+                "max": 1,
+                "sumsqr": 3
+            }
+        },
+        {
+            "key": "511",
+            "value": {
+                "sum": 31,
+                "count": 375,
+                "min": 0,
+                "max": 1,
+                "sumsqr": 31
+            }
+        },
+        {
+            "key": "601",
+            "value": {
+                "sum": 54,
+                "count": 134,
+                "min": 0,
+                "max": 1,
+                "sumsqr": 54
+            }
+        },
+        {
+            "key": "602",
+            "value": {
+                "sum": 11,
+                "count": 147,
+                "min": 0,
+                "max": 1,
+                "sumsqr": 11
+            }
+        },
+        {
+            "key": "603",
+            "value": {
+                "sum": 66,
+                "count": 567,
+                "min": 0,
+                "max": 1,
+                "sumsqr": 66
+            }
+        },
+        {
+            "key": "604",
+            "value": {
+                "sum": 24,
+                "count": 280,
+                "min": 0,
+                "max": 1,
+                "sumsqr": 24
+            }
+        },
+        {
+            "key": "701",
+            "value": {
+                "sum": 0,
+                "count": 26,
+                "min": 0,
+                "max": 0,
+                "sumsqr": 0
+            }
+        },
+        {
+            "key": "702",
+            "value": {
+                "sum": 6,
+                "count": 192,
+                "min": 0,
+                "max": 1,
+                "sumsqr": 6
+            }
+        },
+        {
+            "key": "801",
+            "value": {
+                "sum": 166,
+                "count": 1704,
+                "min": 0,
+                "max": 1,
+                "sumsqr": 166
+            }
+        },
+        {
+            "key": "no_values",
+            "value": {
+                "sum": 303,
+                "count": 5700,
+                "min": 0,
+                "max": 1,
+                "sumsqr": 303
+            }
+        }
+    ]
+}
