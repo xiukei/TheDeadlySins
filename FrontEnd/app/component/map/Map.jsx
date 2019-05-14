@@ -189,6 +189,8 @@ class Map extends React.PureComponent {
             }, 
         ], sum : sum};
         
+        let total = value[0] + value[1] + value[2] + value[3]+ value[4];
+        let avg = (250 * value[0] + 750 * value[1] + 1250* value[2] + 1750 * value[3] + 2500 * value[4] + 3000 * value[5]) / total;
         let ilat = e.latLng.lat();
         let ilng = e.latLng.lng();
         const { classes } = this.props;
@@ -197,7 +199,7 @@ class Map extends React.PureComponent {
             <p className={classes.word}>SA4 Code: {state.code}</p>
             <p className={classes.word}>SA4 Name: {state.name}</p>
             <p className={classes.word}>Anger proportion : {((state.sum / state.count)*100).toFixed(2) + "%"}</p>
-            <p className={classes.word}>Total Income: {sum}</p>
+            <p className={classes.word}>Total Income: ${avg.toFixed(2)}</p>
             <Labelline 
                 data = {data}
             />
