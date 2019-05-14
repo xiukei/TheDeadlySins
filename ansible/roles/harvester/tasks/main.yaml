@@ -23,7 +23,14 @@
   git:
     repo: https://{{ githubuser | urlencode }}:{{ githubpassword | urlencode }}@github.com/xiukei/TheDeadlySins.git
     dest: /home/ubuntu/TheDeadlySins
-  when: ansible_default_ipv4.address != groups['dbserver'][0]
+  when: ansible_default_ipv4.address == groups['dbserver'][1]
+
+- name: Git clone repository
+  tags: 'harvester'
+  git:
+    repo: https://{{ githubuser | urlencode }}:{{ githubpassword | urlencode }}@github.com/xiukei/TheDeadlySins.git
+    dest: /home/ubuntu/TheDeadlySins
+  when: ansible_default_ipv4.address == groups['dbserver'][2]
 
 - name: Run harvester
   tags: 'harvester'
