@@ -5,6 +5,7 @@ from tweepy.streaming import StreamListener
 from tweepy import Stream
 from tweepy import OAuthHandler
 import couchdb
+import os
 
 #analysis tasks (must be in same directory):
 from geotask import geo_analyser
@@ -19,8 +20,23 @@ CONSUMER_SECRET = 'WGCjDSpeehkcgCgQfzR2JqLQ6ooB2n7TBlZeck7wISF6sO2AMR'
 GEOBOX_MELB = [144.7, -37.65, 144.85, -37.5]
 GEOBOX_AUSTRALIA = [112.35, -43.56, 154.41, -10.16]
 
-# 172.26.38.133:5984
-couch = couchdb.Server("http://%s:%s@172.26.38.36:5984/" % ('group41', '1029384756'))
+
+# read host from Ansible/hosts
+path = os.path.abspath(os.path.join(os.getcwd(), "..")) + '/Ansible/hosts'
+host = ""
+flag = False
+with open(path, 'r') as hostfile:
+    for line in hostfile:
+        if '[dbserver]' in line:
+            flag = True
+            continue
+        if flag:
+            host = line.strip()
+            break
+
+# 172.26.38.36:5984/
+port = '5984'
+couch = couchdb.Server("http://%s:%s@%s:%s" % ('group41', '1029384756', host, port))
 if 'tagged_twit' in couch:
     db = couch['tagged_twit']
 else:
