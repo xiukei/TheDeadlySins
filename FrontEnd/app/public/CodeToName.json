@@ -1,0 +1,358 @@
+[
+    {
+        "code": "212",
+        "name": "Melbourne - South East"
+    },
+    {
+        "code": "215",
+        "name": "North West"
+    },
+    {
+        "code": "506",
+        "name": "Perth - South East"
+    },
+    {
+        "code": "405",
+        "name": "Barossa - Yorke - Mid North"
+    },
+    {
+        "code": "201",
+        "name": "Ballarat"
+    },
+    {
+        "code": "109",
+        "name": "Murray"
+    },
+    {
+        "code": "111",
+        "name": "Newcastle and Lake Macquarie"
+    },
+    {
+        "code": "311",
+        "name": "Logan - Beaudesert"
+    },
+    {
+        "code": "317",
+        "name": "Toowoomba"
+    },
+    {
+        "code": "404",
+        "name": "Adelaide - West"
+    },
+    {
+        "code": "303",
+        "name": "Brisbane - South"
+    },
+    {
+        "code": "213",
+        "name": "Melbourne - West"
+    },
+    {
+        "code": "115",
+        "name": "Sydney - Baulkham Hills and Hawkesbury"
+    },
+    {
+        "code": "318",
+        "name": "Townsville"
+    },
+    {
+        "code": "108",
+        "name": "Mid North Coast"
+    },
+    {
+        "code": "116",
+        "name": "Sydney - Blacktown"
+    },
+    {
+        "code": "301",
+        "name": "Brisbane - East"
+    },
+    {
+        "code": "319",
+        "name": "Wide Bay"
+    },
+    {
+        "code": "208",
+        "name": "Melbourne - Inner South"
+    },
+    {
+        "code": "501",
+        "name": "Bunbury"
+    },
+    {
+        "code": "701",
+        "name": "Darwin"
+    },
+    {
+        "code": "509",
+        "name": "Western Australia - Wheat Belt"
+    },
+    {
+        "code": "314",
+        "name": "Moreton Bay - South"
+    },
+    {
+        "code": "401",
+        "name": "Adelaide - Central and Hills"
+    },
+    {
+        "code": "125",
+        "name": "Sydney - Parramatta"
+    },
+    {
+        "code": "406",
+        "name": "South Australia - Outback"
+    },
+    {
+        "code": "210",
+        "name": "Melbourne - North West"
+    },
+    {
+        "code": "901",
+        "name": "Other Territories"
+    },
+    {
+        "code": "304",
+        "name": "Brisbane - West"
+    },
+    {
+        "code": "601",
+        "name": "Hobart"
+    },
+    {
+        "code": "505",
+        "name": "Perth - North West"
+    },
+    {
+        "code": "602",
+        "name": "Launceston and North East"
+    },
+    {
+        "code": "118",
+        "name": "Sydney - Eastern Suburbs"
+    },
+    {
+        "code": "603",
+        "name": "South East"
+    },
+    {
+        "code": "801",
+        "name": "Australian Capital Territory"
+    },
+    {
+        "code": "120",
+        "name": "Sydney - Inner West"
+    },
+    {
+        "code": "316",
+        "name": "Sunshine Coast"
+    },
+    {
+        "code": "110",
+        "name": "New England and North West"
+    },
+    {
+        "code": "121",
+        "name": "Sydney - North Sydney and Hornsby"
+    },
+    {
+        "code": "128",
+        "name": "Sydney - Sutherland"
+    },
+    {
+        "code": "123",
+        "name": "Sydney - Outer South West"
+    },
+    {
+        "code": "103",
+        "name": "Central West"
+    },
+    {
+        "code": "403",
+        "name": "Adelaide - South"
+    },
+    {
+        "code": "105",
+        "name": "Far West and Orana"
+    },
+    {
+        "code": "203",
+        "name": "Geelong"
+    },
+    {
+        "code": "112",
+        "name": "Richmond - Tweed"
+    },
+    {
+        "code": "507",
+        "name": "Perth - South West"
+    },
+    {
+        "code": "503",
+        "name": "Perth - Inner"
+    },
+    {
+        "code": "402",
+        "name": "Adelaide - North"
+    },
+    {
+        "code": "504",
+        "name": "Perth - North East"
+    },
+    {
+        "code": "206",
+        "name": "Melbourne - Inner"
+    },
+    {
+        "code": "702",
+        "name": "Northern Territory - Outback"
+    },
+    {
+        "code": "126",
+        "name": "Sydney - Ryde"
+    },
+    {
+        "code": "101",
+        "name": "Capital Region"
+    },
+    {
+        "code": "124",
+        "name": "Sydney - Outer West and Blue Mountains"
+    },
+    {
+        "code": "106",
+        "name": "Hunter Valley exc Newcastle"
+    },
+    {
+        "code": "209",
+        "name": "Melbourne - North East"
+    },
+    {
+        "code": "307",
+        "name": "Darling Downs - Maranoa"
+    },
+    {
+        "code": "202",
+        "name": "Bendigo"
+    },
+    {
+        "code": "211",
+        "name": "Melbourne - Outer East"
+    },
+    {
+        "code": "604",
+        "name": "West and North West"
+    },
+    {
+        "code": "313",
+        "name": "Moreton Bay - North"
+    },
+    {
+        "code": "308",
+        "name": "Central Queensland"
+    },
+    {
+        "code": "122",
+        "name": "Sydney - Northern Beaches"
+    },
+    {
+        "code": "205",
+        "name": "Latrobe - Gippsland"
+    },
+    {
+        "code": "102",
+        "name": "Central Coast"
+    },
+    {
+        "code": "117",
+        "name": "Sydney - City and Inner South"
+    },
+    {
+        "code": "502",
+        "name": "Mandurah"
+    },
+    {
+        "code": "302",
+        "name": "Brisbane - North"
+    },
+    {
+        "code": "204",
+        "name": "Hume"
+    },
+    {
+        "code": "114",
+        "name": "Southern Highlands and Shoalhaven"
+    },
+    {
+        "code": "113",
+        "name": "Riverina"
+    },
+    {
+        "code": "306",
+        "name": "Cairns"
+    },
+    {
+        "code": "305",
+        "name": "Brisbane Inner City"
+    },
+    {
+        "code": "107",
+        "name": "Illawarra"
+    },
+    {
+        "code": "104",
+        "name": "Coffs Harbour - Grafton"
+    },
+    {
+        "code": "216",
+        "name": "Shepparton"
+    },
+    {
+        "code": "315",
+        "name": "Queensland - Outback"
+    },
+    {
+        "code": "511",
+        "name": "Western Australia - Outback (South)"
+    },
+    {
+        "code": "207",
+        "name": "Melbourne - Inner East"
+    },
+    {
+        "code": "119",
+        "name": "Sydney - Inner South West"
+    },
+    {
+        "code": "127",
+        "name": "Sydney - South West"
+    },
+    {
+        "code": "407",
+        "name": "South Australia - South East"
+    },
+    {
+        "code": "217",
+        "name": "Warrnambool and South West"
+    },
+    {
+        "code": "312",
+        "name": "Mackay - Isaac - Whitsunday"
+    },
+    {
+        "code": "309",
+        "name": "Gold Coast"
+    },
+    {
+        "code": "510",
+        "name": "Western Australia - Outback (North)"
+    },
+    {
+        "code": "214",
+        "name": "Mornington Peninsula"
+    },
+    {
+        "code": "310",
+        "name": "Ipswich"
+    }
+]

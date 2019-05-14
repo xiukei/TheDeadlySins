@@ -12,6 +12,7 @@ import geoData from '../../public/SA4_2016_AUST.json';
 import incomeData from '../../public/Correct_income.json';
 import { relative } from "path";
 import Labelline from "../chart/Pie"
+import twitter from '../../public/couchdb.json';
 
 
 // const paths = [{ lng: 145.001292608, lat: -37.795597669 }, { lng: 145.001945248, lat: -37.79665894 }, { lng: 145.001527872, lat: -37.797168023 }, { lng: 144.999500896, lat: -37.797004021 }, { lng: 144.999388896, lat: -37.79765905 }, { lng: 145.007269856, lat: -37.80297806 }, { lng: 145.007666848, lat: -37.803904059 }, { lng: 145.004588864, lat: -37.805342101 }, { lng: 145.001617952, lat: -37.804250101 }, { lng: 145.000149952, lat: -37.804289118 }, { lng: 144.999283968, lat: -37.805218114 }, { lng: 144.999963968, lat: -37.806600138 }, { lng: 145.000790944, lat: -37.807219129 }, { lng: 145.008068832, lat: -37.807408107 }, { lng: 145.00896384, lat: -37.807996092 }, { lng: 145.009381856, lat: -37.810401129 }, { lng: 145.015504736, lat: -37.810504081 }, { lng: 145.015406816, lat: -37.812144865 }, { lng: 144.991351072, lat: -37.809731244 }, { lng: 144.9936, lat: -37.796054397 }, { lng: 144.997628768, lat: -37.796422048 }, { lng: 145.001292608, lat: -37.795597669 }]
@@ -138,14 +139,17 @@ class Map extends React.PureComponent {
     }
 
     componentDidMount() {
-        let viewURL ="http://172.26.38.36:5984/tagged_twit/_design/angerviewdoc/_view/anger-view?group=true";
-        fetch(viewURL).then(res => {
-            res.json().then((dataJson) => {
-                this.setState({
-                    stateData: dataJson
-                });
-            })
-        })
+        // let viewURL ="http://172.26.38.36:5984/tagged_twit/_design/angerviewdoc/_view/anger-view?group=true";
+        // fetch(viewURL).then(res => {
+        //     res.json().then((dataJson) => {
+        //         this.setState({
+        //             stateData: dataJson
+        //         });
+        //     })
+        // })
+        this.setState({
+            stateData: twitter
+        });
     }
 
     polygonClick = (state, e) => {
@@ -232,6 +236,7 @@ class Map extends React.PureComponent {
         const { classes } = this.props;
 
         let pathsArray = [];
+        let tempJson = [];
         let min = 1;
         let max = 0;
 
@@ -257,6 +262,7 @@ class Map extends React.PureComponent {
                         max = twidata.sum / twidata.count 
                     }
                     pathsArray.push({code : code, paths: geoPath, name : name,  sum : twidata.sum, count: twidata.count});
+                    tempJson.push({code: code, name, name});
                 } else if (value.geometry.type == "MultiPolygon") {
                     let code = value.properties.SA4_CODE16;
                     let twidata = _this.calculatCount(stateData,code);
@@ -275,10 +281,12 @@ class Map extends React.PureComponent {
                         })
                         pathsArray.push({code : code, paths: geoPath, name : name, sum : twidata.sum, count: twidata.count});
                     })
+                    tempJson.push({code: code, name, name});
                 }
             }
         })
         console.log(pathsArray);
+        console.log( JSON.stringify(tempJson));
 
         return (
             <div stle={{ positon: 'relative' }}>
