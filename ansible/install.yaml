@@ -12,9 +12,9 @@
       private: yes
 
   roles:
-    # - role: install_common
-    # - role: volumes
-    # - role: docker
-    # - role: couchdb
+    - role: install_common
+    - role: volumes
+    - role: docker
+    - role: couchdb
     - role: harvester
     - role: frontend
