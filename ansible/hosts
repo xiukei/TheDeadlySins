@@ -1,6 +1,6 @@
 localhost
 
 [dbserver]
-$node-1-ip
-$node-2-ip
-$node-3-ip
+172.26.38.49
+172.26.38.10
+172.26.37.236
