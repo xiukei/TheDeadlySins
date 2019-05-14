@@ -28,7 +28,7 @@
   loop: '{{ security_groups }}'
 
 - name: Create internal security groups rule
-  os_security_group_rules:
+  os_security_group_rule:
     security_group: internal
     protocol: tcp
     remote_security_group: internal
