@@ -86,6 +86,7 @@ class Curved extends React.Component {
                         }}
                     />
                 </Chart>
+                <p>X value: Proportion of Anger Twitter; Y value: Number of people</p>
             </div>
         );
     }
