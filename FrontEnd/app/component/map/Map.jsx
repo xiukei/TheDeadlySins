@@ -199,7 +199,7 @@ class Map extends React.PureComponent {
             <p className={classes.word}>SA4 Code: {state.code}</p>
             <p className={classes.word}>SA4 Name: {state.name}</p>
             <p className={classes.word}>Anger proportion : {((state.sum / state.count)*100).toFixed(2) + "%"}</p>
-            <p className={classes.word}>Total Income: ${avg.toFixed(2)}</p>
+            <p className={classes.word}>Avg Income: ${avg.toFixed(2)}</p>
             <Labelline 
                 data = {data}
             />
