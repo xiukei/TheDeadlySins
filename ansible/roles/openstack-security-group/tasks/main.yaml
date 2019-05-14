@@ -24,12 +24,12 @@
     port_range_max: '{{ item.port_range_max }}'
     remote_ip_prefix: '{{ item.remote_ip_prefix }}'
     state: present
-    when: item.port_range_min is defined
+  when: item.remote_ip_prefix is defined
   loop: '{{ security_groups }}'
 
 - name: Create internal security groups rule
   os_security_group_rule:
     security_group: internal
     protocol: tcp
-    remote_security_group: internal
+    remote_group: internal
     state: present
