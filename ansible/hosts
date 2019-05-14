@@ -1,9 +1,6 @@
 localhost
 
 [dbserver]
-172.26.37.171
-172.26.38.29
-172.26.38.9
-
-[analyser]
-172.26.37.193
+$node-1-ip
+$node-2-ip
+$node-3-ip

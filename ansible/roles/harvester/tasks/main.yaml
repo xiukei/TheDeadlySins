@@ -7,6 +7,7 @@
     state: latest
     install_recommends: no
     update_cache: yes
+  when: ansible_default_ipv4.address != groups['dbserver'][0]
 
 - name: Import python libraries
   tags: 'harvester'
@@ -14,13 +15,15 @@
   pip:
     name: ['tweepy', 'couchdb', 'shapely', 'pyshp', 'indicoio']
     state: latest
-    executable: pip3  
+    executable: pip3
+  when: ansible_default_ipv4.address != groups['dbserver'][0] 
 
 - name: Git clone repository
   tags: 'harvester'
   git:
     repo: https://{{ githubuser | urlencode }}:{{ githubpassword | urlencode }}@github.com/xiukei/TheDeadlySins.git
     dest: /home/ubuntu/TheDeadlySins
+  when: ansible_default_ipv4.address != groups['dbserver'][0]
 
 - name: Run harvester
   tags: 'harvester'
@@ -29,4 +32,4 @@
   poll: 0
   args:
     chdir: /home/ubuntu/TheDeadlySins/harvester_analyser_directory
-    
+  when: ansible_default_ipv4.address != groups['dbserver'][0]

@@ -3,15 +3,6 @@
     - host_vars/couchdb.yaml
   gather_facts: true
 
-  roles:
-    - role: install_common
-    - role: volumes
-    - role: docker
-    - role: couchdb
-
-- hosts: analyser
-  gather_facts: true
-
   vars_prompt:
     - name: "githubuser"
       prompt: "Enter your github username"
@@ -19,7 +10,11 @@
     - name: "githubpassword"
       prompt: "Enter your github password"
       private: yes
+
   roles:
     - role: install_common
+    - role: volumes
+    - role: docker
+    - role: couchdb
     - role: harvester
     - role: frontend

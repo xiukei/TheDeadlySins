@@ -1,22 +1,4 @@
 ---
-- name: Create security group rules for port 5984
-  os_security_group_rule:
-    security_group: 'group41_http'
-    protocol: 'tcp'
-    port_range_min: 5984
-    port_range_max: 5984
-    remote_ip_prefix: 0.0.0.0
-    state: present
-
-- name: Create security group rules for port 5986
-  os_security_group_rule:
-    security_group: 'group41_http'
-    protocol: 'tcp'
-    port_range_min: 5986
-    port_range_max: 5986
-    remote_ip_prefix: 0.0.0.0
-    state: present
-
 - name: Pull docker image
   become: yes
   tags: 'couchdb'
